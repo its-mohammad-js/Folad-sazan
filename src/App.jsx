@@ -8,7 +8,7 @@ import { LanguageProvider } from "./i18n/LanguageProvider";
 
 function App() {
   return (
-    <div className="mx-auto max-w-[1440px]">
+    <div className="mx-auto max-w-[1440px] overflow-hidden">
       <LanguageProvider>
         <Navbar />
         <Routes>
@@ -16,7 +16,7 @@ function App() {
           <Route path="/about-us" element={<AboutusPage />} />
           <Route path="/contact-us" element={<Contactus />} />
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </LanguageProvider>
     </div>
   );

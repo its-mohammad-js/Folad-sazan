@@ -11,9 +11,9 @@ const GlobalTrustSection = () => {
   return (
     <div
       dir={language !== "fa" ? "ltr" : "rtl"}
-      className="flex items-center justify-baseline py-12 px-4 sm:px-6 lg:px-8"
+      className="flex-col md:flex-row flex items-center justify-baseline py-12 px-4 sm:px-6 lg:px-8"
     >
-      <div className="max-w-4xl mx-auto text-start">
+      <div className="max-w-4xl mx-auto text-center md:text-start">
         <h1 className="text-xl font-bold text-gray-200 mb-6">
           {t("globalTrustSection.title")}
         </h1>
@@ -30,25 +30,25 @@ const GlobalTrustSection = () => {
           </span>
         </h2>
 
-        <p className="text-lg text-gray-200 mb-8 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-200 mb-8 max-w-2xl mx-auto leading-8">
           {t("globalTrustSection.description")}
         </p>
 
         <div className="mt-10">
           <button className="cursor-pointer py-3 text-lg flex items-center gap-2 text-white font-medium rounded-md">
             {t("globalTrustSection.button")}
-            <span>
+            <span className="rtl:rotate-180">
               <BsArrowRight />
             </span>
           </button>
         </div>
       </div>
 
-      <div className="w-1/2 h-96">
+      <div className="md:w-1/2 w-full h-fit mt-4 md:mt-0 md:h-96">
         <img
           src="/images/GlobalMapThumbnail.png"
           alt="map-thumbnail"
-          className="size-full object-top object-cover"
+          className="size-full object-center md:object-top object-contain md:object-cover"
         />
       </div>
     </div>

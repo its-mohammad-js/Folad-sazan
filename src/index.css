@@ -33,3 +33,16 @@ body[data-lang="fa"] {
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.4) rgb(90, 84, 84);
 }
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scrollLeft 45s linear infinite;
+}
