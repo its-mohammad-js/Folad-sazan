@@ -30,9 +30,9 @@ function IndustriesSection() {
   } = useTranslation();
 
   return (
-    <div dir={language !== "fa" ? "ltr" : "rtl"} className="relative space-y-6">
+    <div dir={language !== "fa" ? "ltr" : "rtl"} className=" space-y-6">
       {/* title */}
-      <div className="relative opacity -0 z-10 px-4 py-2">
+      <div className="relative z-[5] px-4 py-2">
         <h4 className="text-4xl text-gray-200 font-bold">
           {t("industriesCard.sectionTitle")}
         </h4>
@@ -41,9 +41,12 @@ function IndustriesSection() {
         </p>
       </div>
       {/* cards */}
-      <div className="flex px-4 py-2 opacity -0 md:grid relative z-10 md:grid-cols-2 md:overflow-hidden overflow-auto md:grid-rows-1 gap-6 md:py-1">
+      <div className="flex px-4 py-2 md:grid relative z-[5] md:grid-cols-2 md:overflow-hidden overflow-auto md:grid-rows-1 gap-6 md:py-1">
         {cardsData.map((card, index) => (
-          <div className="bg-[#1b2b56] w-full flex-none h-[30rem] rounded-md overflow-hidden gap-y-2">
+          <div
+            key={index}
+            className="bg-[#1b2b56] w-full flex-none h-[34rem] rounded-md overflow-hidden gap-y-2"
+          >
             <div className="h-3/4 w-full bg-gray-300 rounded-md overflow-hidden">
               <img
                 src={card.thumbnailSrc}
@@ -51,11 +54,13 @@ function IndustriesSection() {
                 className="size-full object-cover"
               />
             </div>
-            <div className="px-4 py-4 flex flex-col justify-evenly gap-2 h-1/4">
+            <div className="px-4 py-4  flex flex-col justify-evenly gap-2 h-1/4">
               <h6 className="text-2xl text-gray-200 font-semibold">
                 {t(card.title)}
               </h6>
-              <p className="text-base text-gray-300">{t(card.subTitle)}</p>
+              <p className="text-sm md:text-base text-gray-300">
+                {t(card.subTitle)}
+              </p>
             </div>
           </div>
         ))}

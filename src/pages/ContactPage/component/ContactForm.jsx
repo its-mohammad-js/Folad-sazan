@@ -11,7 +11,7 @@ function ContactForm() {
   return (
     <section
       dir={language !== "fa" ? "ltr" : "rtl"}
-      className="flex flex-col relative md:flex-row items-center justify-between px-4 py-2"
+      className="flex flex-col relative z-0 md:flex-row items-center justify-between px-4 py-2"
     >
       {/* Contact Info */}
       <div className="bg-[#011c2a] relative z-10 overflow-hidden py-12 pb-32 px-4 md:px-14">

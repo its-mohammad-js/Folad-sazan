@@ -4,7 +4,7 @@ function HeroSection() {
   const { t } = useTranslation();
 
   return (
-    <div className="h-[600px] relative flex items-center justify-center overflow-hidden">
+    <div className="h-[600px] relative z-0 flex items-center justify-center overflow-hidden">
       {/* main title */}
       <div className="text-center px-4 space-y-6 flex flex-col items-center relative z-10">
         <h4 className="text-3xl md:text-5xl relative z-10 font-bold text-gray-200">

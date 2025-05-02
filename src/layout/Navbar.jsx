@@ -1,15 +1,40 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { BiChevronDown, BiMenu } from "react-icons/bi";
 import { useLanguage } from "../i18n/LanguageProvider";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { IoChevronDown } from "react-icons/io5";
+import useOutSideClick from "../hooks/useOutSideClick";
+import { RiMenu2Line } from "react-icons/ri";
+import { CgClose } from "react-icons/cg";
 
 function Navbar() {
   const { toggleLanguage } = useLanguage();
   const {
+    t,
     i18n: { language },
   } = useTranslation();
   const navigate = useNavigate();
+  const [menuIsShow, setMenu] = useState(false);
+  const isRTL = language === "fa";
+  const menuRef = useRef();
+  useOutSideClick(menuRef, () => setMenu(false), !menuIsShow);
+  const [mobileMenu, setMobilemenu] = useState(false);
+
+  // disable scroll on mobile menu open
+  useEffect(() => {
+    document.body.style.overflow = !mobileMenu ? "auto" : "hidden";
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [mobileMenu]);
+
+  function onChangeLang() {
+    toggleLanguage();
+    setMenu(false);
+    setMobilemenu(false);
+  }
 
   return (
     <div className="flex h px-4 py-4 items-center justify-between w-full absolute z-10 max-w-[1440px]">
@@ -22,42 +47,135 @@ function Navbar() {
           Foolad Sazan
         </h4>
       </div>
-
-      <div className="flex items-center gap-8 pl-32 text-gray-200">
-        <button onClick={() => navigate("/")}>Home</button>
-        <button onClick={() => navigate("/about-us")}>About us</button>
-        <button onClick={() => navigate("/contact-us")}>Contact us</button>
+      {/* desktop routes */}
+      <div className="hidden md:flex items-center gap-8 pr-12 py-2 text-gray-200">
+        <button
+          className="cursor-pointer text-lg font-semibold"
+          onClick={() => navigate("/")}
+        >
+          Home
+        </button>
+        <button
+          className="cursor-pointer text-lg font-semibold"
+          onClick={() => navigate("/about-us")}
+        >
+          About us
+        </button>
+        <button
+          className="cursor-pointer text-lg font-semibold"
+          onClick={() => navigate("/contact-us")}
+        >
+          Contact us
+        </button>
       </div>
-
       {/* menu & change language */}
       <div className="flex items-center gap-x-4">
-        {/* language change */}
-        <div className="dropdown">
+        {/* change lang menu */}
+        <div
+          ref={menuRef}
+          className="relative hidden md:flex items-center text-center"
+        >
+          <button
+            onClick={() => setMenu(!menuIsShow)}
+            className={`${
+              isRTL && "flex-row-reverse"
+            } cursor-pointer text-gray-200 text-lg font-semibold flex items-center gap-x-2`}
+          >
+            <p>{!isRTL ? "English" : "فارسی"}</p>
+            <IoChevronDown
+              className={`${menuIsShow && "rotate-180"} mt-0.5 transition-all`}
+            />
+          </button>
+
           <div
-            tabIndex={0}
-            role="button"
-            className="btn bg-none border-none text-gray-200 flex items-center "
+            className={`${
+              menuIsShow ? "opacity-100 visible" : "opacity-0 invisible "
+            } absolute flex z-50 gap-y-2 flex-col px-2 top-full w-32 transition-all py-2 items-center justify-center rounded-md right-0 mt-2 shadow-2xl bg-gray-100`}
           >
-            Select language <BiChevronDown className="text-2xl mt-1" />
+            <button
+              onClick={() =>
+                language !== "fa" ? onChangeLang() : setMenu(false)
+              }
+              className={`${
+                language === "fa" && "bg-gray-200"
+              } px-2 py-1 size-full rounded-md hover:bg-gray-200 cursor-pointer`}
+            >
+              فارسی
+            </button>
+            <button
+              onClick={() =>
+                language === "fa" ? onChangeLang() : setMenu(false)
+              }
+              className={`${
+                language !== "fa" && "bg-gray-300"
+              } px-2 py-1 size-full rounded-md hover:bg-gray-200 cursor-pointer`}
+            >
+              English
+            </button>
           </div>
-          <ul
-            tabIndex={0}
-            className="dropdown-content menu bg-gray-100 rounded-box z-1 w-52 p-2 shadow-sm"
-          >
-            <li onClick={() => language !== "en" && toggleLanguage()}>
-              <a>English</a>
-            </li>
-            <li onClick={() => language !== "fa" && toggleLanguage()}>
-              <a>فارسی</a>
-            </li>
-          </ul>
         </div>
 
-        <button className="bg-[#1F3E88] hidden md:block cursor-pointer px-4 py-2 text-slate-200 font-semibold rounded-md">
-          contact
-        </button>
-        <div className="">
-          <BiMenu className="bg-slate-200 text-slate-800 p-1.5 rounded-md text-4xl cursor-pointer" />
+        <div className="md:hidden relative z-20">
+          <button
+            onClick={() => setMobilemenu(true)}
+            className="text-[#3b5bb3] rotate-180 text-xl"
+          >
+            <RiMenu2Line className="text-3xl" />
+          </button>
+
+          <div
+            className={`${
+              mobileMenu
+                ? "visible opacity-100 translate-x-0"
+                : "invisible opacity-0 translate-x-10"
+            } flex flex-col fixed z-50 transition-all font-semibold text-lg text-gray-200 bg-[#1B2B56] gap-y-4 w-full top-0 py-12 left-0 h-screen`}
+          >
+            <button
+              onClick={() => setMobilemenu(false)}
+              className="absolute top-4 right-4 text-2xl"
+            >
+              <CgClose />
+            </button>
+
+            <button
+              onClick={() => {
+                navigate("/");
+                setMobilemenu(false);
+              }}
+            >
+              {t("navbar.home")}
+            </button>
+            <button
+              onClick={() => {
+                navigate("/about-us");
+                setMobilemenu(false);
+              }}
+            >
+              {t("navbar.about")}
+            </button>
+            <button
+              onClick={() => {
+                navigate("/contact-us");
+                setMobilemenu(false);
+              }}
+            >
+              {t("navbar.contact")}
+            </button>
+            <button
+              onClick={() =>
+                language !== "fa" ? onChangeLang() : setMenu(false)
+              }
+            >
+              فارسی
+            </button>
+            <button
+              onClick={() =>
+                language === "fa" ? onChangeLang() : setMenu(false)
+              }
+            >
+              English
+            </button>
+          </div>
         </div>
       </div>
     </div>

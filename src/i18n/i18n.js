@@ -150,6 +150,11 @@ const resources = {
           sendButton: "Send Message",
         },
       },
+      navbar: {
+        home: "Home",
+        about: "About Us",
+        contact: "Contact Us",
+      },
     },
   },
   fa: {
@@ -299,6 +304,11 @@ const resources = {
           messagePlaceholder: "پیام خود را بنویسید...",
           sendButton: "ارسال پیام",
         },
+      },
+      navbar: {
+        home: "خانه",
+        about: "درباره ما",
+        contact: "ارتباط با ما",
       },
     },
   },
