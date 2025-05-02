@@ -13,7 +13,7 @@ const MetricsSection = () => {
   return (
     <section
       dir={language !== "fa" ? "ltr" : "rtl"}
-      className="py-16 px-4 text-center text-white"
+      className="py-16 px-4 z-10 relative text-center text-white"
     >
       <h2 className="text-2xl md:text-3xl font-bold mb-4">
         {t("metricsSection.title")}
