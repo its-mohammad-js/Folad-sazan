@@ -37,13 +37,6 @@ function HeroSection() {
         </div>
         <div className="absolute size-[33rem] bg-[#2A5894] ltr:-right-12 rtl:-left-12 rounded-xl -top-32 -rotate-[12deg]"></div>
       </div>
-      {/* line shapes */}
-      {/* <div
-        dir="rtl"
-        className="absolute w-full flex items-center justify-start bottom-0 right h-16"
-      >
-        <img src="/images/ShapesHomeHero.svg" className="-mr-28 md:-mr-16" />
-      </div> */}
     </div>
   );
 }

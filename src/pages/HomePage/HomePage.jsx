@@ -13,7 +13,6 @@ function HomePage() {
 
   return (
     <div className="[&>div]:py-8 relative md:[&>div]:py-24">
-      {/* <div className="[&>div]:py-8 relative md:[&>div]:py-24"> */}
       <HeroSection />
       <IndustriesSection />
 
@@ -28,7 +27,7 @@ function HomePage() {
           className="-ml-20 mt-64 md:mt-14"
         />
       </div>
-      {/* </div> */}
+
       <MetricsSection />
       <GlobalTrustSection />
       <GrowthExcellenceSection />

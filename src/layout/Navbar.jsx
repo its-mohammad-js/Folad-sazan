@@ -2,12 +2,14 @@ import React from "react";
 import { BiChevronDown, BiMenu } from "react-icons/bi";
 import { useLanguage } from "../i18n/LanguageProvider";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   const { toggleLanguage } = useLanguage();
   const {
     i18n: { language },
   } = useTranslation();
+  const navigate = useNavigate();
 
   return (
     <div className="flex h px-4 py-4 items-center justify-between w-full absolute z-10 max-w-[1440px]">
@@ -19,6 +21,12 @@ function Navbar() {
         <h4 className="text-base md:text-2xl font-bold text-slate-100">
           Foolad Sazan
         </h4>
+      </div>
+
+      <div className="flex items-center gap-8 pl-32 text-gray-200">
+        <button onClick={() => navigate("/")}>Home</button>
+        <button onClick={() => navigate("/about-us")}>About us</button>
+        <button onClick={() => navigate("/contact-us")}>Contact us</button>
       </div>
 
       {/* menu & change language */}

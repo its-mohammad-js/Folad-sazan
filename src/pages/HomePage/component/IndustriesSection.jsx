@@ -60,30 +60,6 @@ function IndustriesSection() {
           </div>
         ))}
       </div>
-      {/* line shpapes */}
-      {/* <div
-        dir="rtl"
-        className="absolute w-full flex flex-col items-center justify-center top-0"
-      >
-        <img
-          src="/images/ShapesServicesSection.svg"
-          className="md:-mr-[2.6rem] w-[70px] md:w-auto"
-        />
-        <img
-          src="/images/ShapesServicesSectionLast.svg"
-          className="-ml-[14.3rem] md:hidden"
-        />
-      </div>
-
-      <div
-        dir="rtl"
-        className="absolute hidden md:flex w-full items-center justify-end  bottom-0 left-0"
-      >
-        <img
-          src="/images/ShapesServicesSectionLast.svg"
-          className="-ml-[3.5rem]"
-        />
-      </div> */}
     </div>
   );
 }
