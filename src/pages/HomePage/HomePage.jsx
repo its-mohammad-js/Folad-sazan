@@ -5,6 +5,7 @@ import HeroSection from "./component/HeroSection";
 import IndustriesSection from "./component/IndustriesSection";
 import MetricsSection from "./component/MetricsSection ";
 import TestimonialsSection from "./component/TestimonialsSection";
+import ProductsSection from "./component/ProductsSection";
 
 function HomePage() {
   const {
@@ -15,7 +16,7 @@ function HomePage() {
     <div className="[&>div]:py-8 relative md:[&>div]:py-24">
       <HeroSection />
       <IndustriesSection />
-
+      <ProductsSection />
       <div className="absolute inset-0 w-[150%] md:w-[110%] z-0">
         <img
           src={
@@ -27,7 +28,6 @@ function HomePage() {
           className="-ml-20 mt-64 md:mt-14"
         />
       </div>
-
       <MetricsSection />
       <GlobalTrustSection />
       <GrowthExcellenceSection />

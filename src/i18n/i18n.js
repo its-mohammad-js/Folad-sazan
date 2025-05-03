@@ -157,6 +157,11 @@ const resources = {
         contact: "Contact Us",
         desc: "Foolad Sazan delivers high-quality casting services using modern technology and skilled experts. Our commitment to quality has earned the trust of our clients.",
       },
+      ProductsHero: {
+        title: "Foolad Sazan – A Trusted Choice for Buying Steel Products",
+        searchPlaceholder: "Search for a product...",
+        searchButton: "Search",
+      },
     },
   },
   fa: {
@@ -313,6 +318,11 @@ const resources = {
         products: "محصولات",
         contact: "ارتباط با ما",
         desc: "فولادسازان با بهره‌گیری از فناوری روز و نیروی متخصص، خدمات ریخته‌گری دقیق و باکیفیتی ارائه می‌دهد. تعهد ما به کیفیت، اعتماد مشتریان را تضمین کرده است.",
+      },
+      ProductsHero: {
+        title: "فولادسازان – انتخابی مطمئن برای خرید محصولات فولادی",
+        searchPlaceholder: "جستجوی محصول...",
+        searchButton: "جستجو",
       },
     },
   },

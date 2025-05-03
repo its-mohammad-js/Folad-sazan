@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { ProductInfo } from "../../i18n/ProductsInfo";
 import { useNavigate } from "react-router-dom";
+import HeroSection from "./component/HeroSection";
 
 const products = [
   {
@@ -54,9 +55,8 @@ function ProductsPage() {
 
   return (
     <div>
-      <div className="h-96 bg-gray-600 flex items-center justify-center text-2xl text-gray-200">
-        Hero Section
-      </div>
+      {/* Hero section */}
+      <HeroSection />
 
       <div dir={language !== "fa" ? "ltr" : "rtl"} className="cursor-pointer">
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">

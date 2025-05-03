@@ -11,19 +11,19 @@ function OurMissionSection() {
       dir={language !== "fa" ? "ltr" : "rtl"}
       className="space-y-28 my-16 overflow-hidden"
     >
-      <div className="px-4 py-2 mx-auto">
+      <div className="mx-auto">
         <div className="flex flex-col md:flex-row relative gap-8 md:gap-12 lg:gap-16">
           {/* Colored Box */}
           <div className="w-full md:w-1/5">
             <img
               src="/images/figureOurMission (1).png"
               alt="figure-image"
-              className="object-contain absolute rtl:-right-48 ltr:-left-48 size-[28rem] -top-14"
+              className="object-contain absolute rtl:-right-24 ltr:-left-48 md:rtl:-right-48 md:ltr:-left-48 size-[28rem] -top-12 md:-top-14"
             />
           </div>
 
           {/* Text Content */}
-          <div className="w-full md:w-2/3 space-y-6">
+          <div className="w-full md:w-2/3 px-4 py-2 space-y-6 relative z-10 bg-[#0f172a]/50 backdrop-blur-xs">
             <h2 className="text-3xl md:text-6xl font-bold text-gray-200">
               {t("OurMissionSection.missionTitle")}
             </h2>
@@ -34,10 +34,10 @@ function OurMissionSection() {
         </div>
       </div>
 
-      <div className="px-4 py-2 mx-auto">
+      <div className="mx-auto">
         <div className="flex flex-col md:flex-row justify-end gap-8 md:gap-12 relative lg:gap-16">
           {/* Text Content */}
-          <div className="w-full md:w-2/3 space-y-6">
+          <div className="w-full md:w-2/3 space-y-6 relative z-10 bg-[#0f172a]/50 px-4 py-2 backdrop-blur-xs">
             <h2 className="text-3xl md:text-6xl font-bold text-gray-200">
               {t("OurMissionSection.visionTitle")}
             </h2>
@@ -51,7 +51,7 @@ function OurMissionSection() {
             <img
               src="/images/figureOurMission (2).png"
               alt="figure-image"
-              className="object-contain absolute rtl:-left-48 ltr:-right-48 size-[28rem] -top-36"
+              className="object-contain absolute rtl:-left-48 ltr:-right-48 size-[28rem] -top-24 md:-top-36"
             />
           </div>
         </div>
