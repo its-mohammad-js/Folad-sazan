@@ -24,7 +24,7 @@ function HeroSection() {
 
   return (
     <section
-      className="py-28 flex px-4 relative z-0 items-start justify-between"
+      className="py-28 flex px-4 relative z-[5] items-start justify-between"
       dir={textDirection}
     >
       <div className="relative z-10 md:w-1/2 py-10  sm:px-6 md:px-8">

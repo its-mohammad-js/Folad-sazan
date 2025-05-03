@@ -1,8 +1,6 @@
 import { FaQuoteLeft } from "react-icons/fa";
 
 const TestimonialCard = ({ testimonial, langKey }) => {
-  console.log(langKey);
-
   return (
     <div
       dir={langKey !== "Fa" ? "ltr" : "rtl"}

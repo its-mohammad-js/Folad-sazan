@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import { BiChevronDown, BiMenu } from "react-icons/bi";
 import { useLanguage } from "../i18n/LanguageProvider";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { IoChevronDown } from "react-icons/io5";
 import useOutSideClick from "../hooks/useOutSideClick";
 import { RiMenu2Line } from "react-icons/ri";
@@ -20,6 +19,7 @@ function Navbar() {
   const menuRef = useRef();
   useOutSideClick(menuRef, () => setMenu(false), !menuIsShow);
   const [mobileMenu, setMobilemenu] = useState(false);
+  const location = useLocation();
 
   // disable scroll on mobile menu open
   useEffect(() => {
@@ -37,7 +37,14 @@ function Navbar() {
   }
 
   return (
-    <div className="flex h px-4 py-4 items-center justify-between w-full absolute z-10 max-w-[1440px]">
+    <div
+      className={`${
+        location.pathname.includes("/products") ||
+        location.pathname.includes("/product")
+          ? "static"
+          : "absolute"
+      } flex h px-4 py-4 items-center justify-between w-full z-10 max-w-[1440px]`}
+    >
       {/* logo section */}
       <div className="flex items-center gap-x-2">
         <div className="bg-slate-300 rounded-full">
@@ -48,24 +55,30 @@ function Navbar() {
         </h4>
       </div>
       {/* desktop routes */}
-      <div className="hidden md:flex items-center gap-8 pr-12 py-2 text-gray-200">
+      <div className="hidden ltr:flex-row-reverse md:flex items-center gap-8 rtl:pr-12 ltr:pr-16 py-2 text-gray-200">
         <button
           className="cursor-pointer text-lg font-semibold"
           onClick={() => navigate("/")}
         >
-          Home
+          {t("navbar.home")}
         </button>
         <button
           className="cursor-pointer text-lg font-semibold"
           onClick={() => navigate("/about-us")}
         >
-          About us
+          {t("navbar.about")}
         </button>
         <button
           className="cursor-pointer text-lg font-semibold"
           onClick={() => navigate("/contact-us")}
         >
-          Contact us
+          {t("navbar.contact")}
+        </button>
+        <button
+          className="cursor-pointer text-lg font-semibold"
+          onClick={() => navigate("/products")}
+        >
+          {t("navbar.products")}
         </button>
       </div>
       {/* menu & change language */}
@@ -160,6 +173,14 @@ function Navbar() {
               }}
             >
               {t("navbar.contact")}
+            </button>
+            <button
+              onClick={() => {
+                navigate("/products");
+                setMobilemenu(false);
+              }}
+            >
+              {t("navbar.products")}
             </button>
             <button
               onClick={() =>
