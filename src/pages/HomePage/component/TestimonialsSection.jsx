@@ -88,9 +88,9 @@ const TestimonialsSection = () => {
       </div>
 
       <div className="flex w-max animate-scroll gap-x-6">
-        {doubledTestimonials.map((testimonial) => (
+        {doubledTestimonials.map((testimonial, i) => (
           <TestimonialCard
-            key={`duplicate-${testimonial.id}`}
+            key={testimonial.id * i}
             testimonial={testimonial}
             langKey={langKey}
           />

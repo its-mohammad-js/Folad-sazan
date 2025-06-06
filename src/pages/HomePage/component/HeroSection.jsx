@@ -13,8 +13,14 @@ function HeroSection() {
     >
       {/* title */}
       <div className="h-full text-center relative md:px-16 w-full md:w-1/2 z-10 gap-4 flex items-center justify-center flex-col px-12 md:pt-12">
-        <div className="size-64 mt-28 rounded-xl bg-gradient-to-l from-[#C026D3] to-[#612368] -top-6 md:top-auto -rotate-12 ltr:-left-20 absolute md:ltr:-left-56 md:rtl:-right-56 z-0"></div>
-        <div className="size-64 mt-28 rounded-xl bg-gradient-to-l from-[#9333EA] to-[#4A00E0] -top-6 md:top-auto -rotate-6 absolute md:ltr:-left-56 md:rtl:-right-56"></div>
+        <div className="size-64 mt-28 rounded-xl bg-gradient-to-l overflow-hidden from-[#C026D3] to-[#612368] -top-6 md:top-auto -rotate-12 ltr:-left-20 absolute md:ltr:-left-56 md:rtl:-right-56 z-0">
+          <img
+            src="/images/FoladThumbnail.jpg"
+            alt="thumbnail"
+            className="size-full object-cover"
+          />
+        </div>
+        <div className="size-64 mt-28 rounded-xl bg-gradient-to-l from-[#9333EA] opacity-80 to-[#4A00E0] -top-6 md:top-auto -rotate-6 absolute md:ltr:-left-56 md:rtl:-right-56 overflow-hidden"></div>
         <h4 className="text-3xl md:w-10/12 leading-10 md:leading-16 md:text-5xl font-bold text-gray-200 z-10">
           {t("hero.title")}
         </h4>
@@ -30,7 +36,7 @@ function HeroSection() {
       <div className="md:w-1/2 hidden md:block w-full h-full absolute -top-24 md:relative z-[5]">
         <div className="absolute size-[32rem] bg-gray-600 z-10 ltr:-right-14 rtl:-left-14 rounded-xl overflow-hidden -top-36 -rotate-12">
           <img
-            src="/images/Thumbnail01.jpg"
+            src="/images/FoladThumbnail.jpg"
             alt="thumbnail"
             className="size-full opacity-60"
           />

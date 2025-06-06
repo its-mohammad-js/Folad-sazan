@@ -1,10 +1,20 @@
 import { useTranslation } from "react-i18next";
 
-function HeroSection() {
+function HeroSection({ setFiltered, products, loading }) {
   const {
     t,
     i18n: { language },
   } = useTranslation();
+
+  function searchProducts(query) {
+    if (query === "" || !query) {
+      setFiltered(products);
+    } else {
+      setFiltered(
+        products.filter((item) => item[`title__${language}`].includes(query))
+      );
+    }
+  }
 
   return (
     <div
@@ -29,8 +39,10 @@ function HeroSection() {
         </h1>
         <div className="flex items-center gap-2 bg-white/90 rounded-lg p-2 shadow-lg">
           <input
+            disabled={loading}
             type="text"
             placeholder={t("ProductsHero.searchPlaceholder")}
+            onChange={(e) => searchProducts(e.target.value)}
             className="flex-1 px-4 py-2 text-gray-800 placeholder-gray-500 bg-transparent outline-none"
           />
           <button className="bg-[#25448d] hover:bg-[#214eb8] text-white px-4 py-2 rounded-lg transition">
