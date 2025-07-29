@@ -25,10 +25,6 @@
   }
 }
 
-@plugin "daisyui" {
-  themes: false;
-}
-
 body {
   background-color: #0f172a;
 }

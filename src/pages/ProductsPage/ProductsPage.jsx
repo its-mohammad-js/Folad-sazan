@@ -41,16 +41,17 @@ function ProductsPage() {
                   className="group cursor-pointer"
                 >
                   <img
-                    alt={item.imageAlt}
+                    alt={"product thumbnail"}
                     src={item.thumbnail}
                     className="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8"
                   />
                   <h3 className="mt-4 text-base md:text-xl font-bold text-gray-200">
-                    {item[`title__${language}`]}
+                    {item.title[`${language}`]}
                   </h3>
                   <p className="mt-1 text-lg font-medium text-gray-300">
-                    {item.Price}{" "}
-                    <span>{language !== "fa" ? "Toman" : "تومان"}</span>
+                    {item.price
+                      ? `${item.price} ${language !== "fa" ? "Toman" : "تومان"}`
+                      : "قیمت تنظیم نشده"}
                   </p>
                 </div>
               ))

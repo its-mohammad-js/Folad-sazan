@@ -7,6 +7,8 @@ import Footer from "./layout/Footer";
 import { LanguageProvider } from "./i18n/LanguageProvider";
 import ProductsPage from "./pages/ProductsPage/ProductsPage";
 import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage";
+import DashboardPage from "./pages/DashboardPage/DashboardPage";
+import MainFrom from "./pages/DashboardPage/components/forms/MainForm/MainFrom";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/contact-us" element={<Contactus />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/product/:id" element={<ProductDetailPage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/MainForm/:id?" element={<MainFrom />} />
         </Routes>
         <Footer />
       </LanguageProvider>

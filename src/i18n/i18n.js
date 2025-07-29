@@ -5,6 +5,7 @@ const resources = {
   en: {
     translation: {
       hero: {
+        dashboard_title: "Add New Product",
         title: "Crafting Excellence in Steel & Casting",
         subtitle:
           "With decades of expertise, we deliver top-quality steel and casting solutions for industries worldwide.",
@@ -162,11 +163,30 @@ const resources = {
         searchPlaceholder: "Search for a product...",
         searchButton: "Search",
       },
+      MainForm: {
+        editTitle: "Edit Product",
+        addTitle: "Add New Product",
+        generalTitle: "General Inforamtion",
+        techTitle: "Technical Inforamtion",
+        editBtn: "Submit Updates",
+        submtiBtn: "Add New Product",
+        addProp: "Add Technical Prop",
+      },
+      LoginForm: {
+        title: "FooladSazan",
+        title02: "login to admin panel",
+        userNameLabel: "User name",
+        passwordLabel: "Password",
+        submitbtn: "Login",
+        userNamePlaceHolder: "User name",
+        passwordPlaceholder: "Password",
+      },
     },
   },
   fa: {
     translation: {
       hero: {
+        dashboard_title: "اضافه کردن محصول جدید",
         title: "خلق کیفیت بی‌نظیر در صنعت فولاد و ریخته‌گری",
         subtitle:
           "با سال‌ها تجربه، ما بهترین خدمات فولاد و ریخته‌گری رو برای صنایع در سرتاسر دنیا ارائه می‌دهیم.",
@@ -323,6 +343,24 @@ const resources = {
         title: "فولادسازان – انتخابی مطمئن برای خرید محصولات فولادی",
         searchPlaceholder: "جستجوی محصول...",
         searchButton: "جستجو",
+      },
+      MainForm: {
+        editTitle: "ویرایش محصول",
+        addTitle: "اضافه کردن محصول جدید",
+        generalTitle: "اطلاعات کلی محصول",
+        techTitle: "اطلاعات فنی محصول",
+        editBtn: "ثبت تغییرات",
+        submtiBtn: "ثبت محصول جدید",
+        addProp: "اضافه کردن به ویژگی های فنی",
+      },
+      LoginForm: {
+        title: "فولاد سازان",
+        title02: "برای کار با پنل وارد شوید",
+        userNameLabel: "نام کاربری",
+        passwordLabel: "رمز عبور",
+        submitbtn: "ورود",
+        userNamePlaceHolder: "نام کاربری",
+        passwordPlaceholder: "رمز عبور",
       },
     },
   },

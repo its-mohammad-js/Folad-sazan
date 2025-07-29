@@ -31,10 +31,10 @@ export default function ProductsSection() {
               key={item.id}
               className="border-gray-200 rounded-lg overflow-hidden shadow-sm hover:opacity-80 cursor-pointer"
             >
-              <div className="relative bg-red-100 h-60 w-full">
+              <div className="relative bg-[#1d2f57] h-60 w-full">
                 <img
                   src={item.thumbnail}
-                  alt={item.title}
+                  alt={item.title[language]}
                   fill
                   className="object-cover size-full"
                 />
@@ -43,15 +43,15 @@ export default function ProductsSection() {
               <div className="p-5">
                 <div className="flex items-center gap-6 text-gray-200 mb-3">
                   <div className="flex items-center gap-1">
-                    <BiCategory className="h-4 w-4" />
+                    <BiCategory className="size-4" />
                     <span className="text-sm">
-                      {item[`category__${language}`]}
+                      {item.category[`${language}`]}
                     </span>
                   </div>
                 </div>
 
                 <h3 className="text-xl font-semibold text-gray-200 transition-colors duration-300">
-                  {item[`title__${language}`]}
+                  {item.title[`${language}`]}
                 </h3>
               </div>
             </div>

@@ -18,7 +18,8 @@ const Footer = () => {
   return (
     <footer
       dir={language === "fa" ? "rtl" : "ltr"}
-      className="text-gray-200 mt-auto"
+      className="text-gray-200 mt-auto relative
+      bg-[#0f172a]/90"
     >
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="flex flex-col md:flex-row md:justify-start items-start gap-14">
@@ -29,7 +30,7 @@ const Footer = () => {
                 <img src="/FoladLogo.png" alt="" />
               </div>
               <h4 className="text-3xl font-bold">
-                {language === "fa" ? "فولاد سازان" : "Folad Sazan"}
+                {language === "fa" ? "فولاد سازان" : "Foolad Sazan"}
               </h4>
             </div>
             {/* desc */}
@@ -65,7 +66,7 @@ const Footer = () => {
         {/* Divider */}
         <div className="border-t border-gray-200 mt-8 pt-8">
           <p className="text-center text-sm text-gray-500">
-            © folad sazan @ 2025. All rights reserved.
+            © foolad sazan @ 2025. All rights reserved.
           </p>
         </div>
       </div>

@@ -43,7 +43,9 @@ function Navbar() {
         location.pathname.includes("/product")
           ? "static"
           : "absolute"
-      } flex h px-4 py-4 items-center justify-between w-full z-10 max-w-[1440px]`}
+      } flex h px-4 py-4 items-center justify-between w-full z-10 max-w-[1440px] ${
+        location.pathname.includes("dashboard") && "bg-[#0f172a]/30"
+      }`}
     >
       {/* logo section */}
       <div className="flex items-center gap-x-2">
